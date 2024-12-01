@@ -1,6 +1,7 @@
 :root{
     --color-amarillo: #fbffa7;
     --color-naranja: #ff764d;
+    --color-text: black;
 }
 
 html{
@@ -11,11 +12,35 @@ body{
     height:auto;
     font-family: "Poppins", Helvetica, sans-serif;
     font-size: 1.5rem; /*Esto seria unos 15 pixeles. */
-    background-color: var(--color-bg-aesthetic);
-    color: var(--color-text);
-    overflow: hidden; 
     
-    background-image: url('../assets/25.png');
-    background-repeat: round;
+    color: var(--color-text);
+      
     /*Para que no haya scroll ni overflow de scroll*/
 }
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 150vh;    
+    
+}
+
+/*NAVEGACION*/
+.nav{
+    width: 100vw;
+    border: 5rem solid red;
+}
+
+/*HEADER*/
+.header{
+    width: 100vw;
+    border: 5rem solid blue;
+}
+
+/*CONTENIDO*/
+.contenido{
+    border: 1rem solid var(--color-amarillo);
+    height: 250rem;
+    width: 84vw;
+}
+
