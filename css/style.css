@@ -28,13 +28,18 @@ body{
 /*NAVEGACION*/
 .nav{
     width: 100vw;
-    border: 5rem solid red;
+    display: flex;   
+}
+.main-nav, .second-nav{
+    display: flex;
+
 }
 
 /*HEADER*/
 .header{
     width: 100vw;
     border: 5rem solid blue;
+    margin: 0;
 }
 
 /*CONTENIDO*/
