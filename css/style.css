@@ -1,0 +1,21 @@
+:root{
+    --color-amarillo: #fbffa7;
+    --color-naranja: #ff764d;
+}
+
+html{
+    font-size: 10px;   
+}
+body{
+    width: 100%;
+    height:auto;
+    font-family: "Poppins", Helvetica, sans-serif;
+    font-size: 1.5rem; /*Esto seria unos 15 pixeles. */
+    background-color: var(--color-bg-aesthetic);
+    color: var(--color-text);
+    overflow: hidden; 
+    
+    background-image: url('../assets/25.png');
+    background-repeat: round;
+    /*Para que no haya scroll ni overflow de scroll*/
+}
