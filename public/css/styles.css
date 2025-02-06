@@ -1,0 +1,296 @@
+:root{
+    /*--color-bg-aesthetic: rgba(255, 194, 223,1);*/
+    --color-bg-aesthetic: white;
+    --color-principal: rgb(121, 119, 70);
+    --color-secondary: rgba(255, 255, 255, 1);
+    --color-rosa: rgb(143, 32, 86);
+
+    --color-bg-original: #24303c;
+    /* */
+}
+
+html{
+    font-size: 10px;   
+}
+body{
+    width: 100%;
+    height:auto;
+    font-family: "Poppins", Helvetica, sans-serif;
+    font-size: 1.5rem; /*Esto seria unos 15 pixeles. */
+    background-color: var(--color-bg-aesthetic);
+    color: var(--color-text);
+    overflow: hidden; 
+    
+    background-image: url('../assets/25.png');
+    background-repeat: round;
+    /*Para que no haya scroll ni overflow de scroll*/
+}
+
+.wrapper{
+    position: relative; /*Para que se comporte de esa manera la caja completa a la cual le asignamos la clase .wrapper*/
+    /*min-width: 1290px; anchura minima*/
+        
+    width: 100vw; /*que es un 80% de la pantalla*/
+    min-width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    
+    /*margin: 1.5vh auto;Con 0 auto estoy centrando HORIZONTALMENTE la caja. Para centrar verticalmente puedo ocupar 10vh de margen arriba y abajo tomando en cuenta que el height esta en 80vh*/
+    background-color: var(--color-bg-aesthetic);
+    opacity: 0.9;
+    display: grid;
+    grid-template-areas: 
+    "encabezado"
+    "navbar"
+    "cuerpo";
+/*"footer";*/
+    
+    grid-template-rows: 13vh
+    6vh
+    80vh; 
+    /*20%;
+    
+    grid-template-areas: 
+    
+        "aside content";
+        */
+        /*Pudieramos usar flexbox y floats para hacerlo pero lo mas correcto es usar css grid layot*/
+    /*
+        grid-template-columns: 30% 70%;
+    */
+    /*border-radius: 4rem 4rem 0 0;*/
+    /*Sombra detras del layot*/
+    box-shadow: 0 0 100px -5px rgba(0 ,0 ,0, 0.25); 
+    /*desplazamiento en x, desplazamiento en y, y difuminado en pixeles. 
+    Y ademas le especificamos el desplazamiento de la sombra, si no le pongo nada va estar alrededor de elemento y ya esta
+    con -x px la sombra se desplaza un poco hacia arriba. 
+    Y ya por ultimo le aplico un color con rgb la barra es para indicar opacidad. Que en mi practico no funciono, 
+    pero usando rgba si funciono.*/ 
+    /*
+    border: 1px solid red;
+    
+    display: grid;
+    
+    grid-template-areas: "encabezado navbar cuerpo footer";
+    grid-template-columns: auto auto auto auto;
+
+    grid-row: 10% 10% 60% auto;
+    */
+    overflow: hidden;
+    
+    
+    
+}
+
+/*HEADER PENDIENTE DE TRABAJAR*/
+.wrapper__header{
+
+    grid-area: "encabezado";
+    display: flex;
+    flex-direction: column;    
+    
+    width: 100%;
+
+    background-color: transparent;/*cadetblue;*/
+    border-bottom: solid;    
+    
+    
+}
+
+.header__navbar{        
+    width: 100%;    
+    background-color: transparent;        
+    align-content: center;    
+    grid-area: navbar;
+
+}
+
+/*
+nav .toggle_btn{
+    display: block;
+}
+*/
+
+.navbar__lista{                
+    /*max-width: 1200px;
+    min-width: 700px;*/    
+    width: 100%;    
+    margin: 0;    
+    
+ /*   
+    min-width: 320px;
+*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /*
+    border: 5px solid red;      */
+}
+
+.navbar__btn{
+    /*display: inline-block;*/
+    display: block; /*vuelve la etique a que es inline a comportamiento de bloque como el que tiene la etiqueta p*/
+    width: 100%;
+    background-color: var(--color-principal);
+    border: 1px solid transparent;
+    /*padding: 0.5rem 0.5rem;*/
+}
+
+.navbar__enlace{
+    color: whitesmoke;
+    font-size: 2.4rem;
+        
+    text-transform: uppercase;
+    font-style: oblique;
+    text-align: center;
+    align-items: center;
+    transition: all 300ms ease-in-out;    
+}
+.navbar__enlace:hover, .navbar__enlace--active{
+
+    background-color: whitesmoke;
+    color: var(--color-principal);
+    font-weight: bold;
+}
+
+/*HEADER PENDIENTE DE TRABAJAR*/
+
+/*CONTENIDO DE LA PAGINA*/
+.wrapper__main{
+
+    grid-area: "cuerpo";
+    /*width: 95vw;*/
+    height: auto;
+    justify-content: center;
+    align-content: center;
+
+    align-items: center;
+    justify-items: center;
+    background-color: transparent;/*cadetblue;*/
+    /*padding: 1rem;*/
+    margin: 1rem 0 0 0; /*arriba lados abajo*/
+    padding-top: 0.5rem;    /**/
+    overflow-x: hidden;   
+    /*Esto lo ocupo ya que tendre el footer dentro del wrapper__main
+    para que se pegue abajo y el primer contenido se pegue arriba*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*min-width: 600px;*/
+}
+
+
+.footer{
+    position: relative;
+    border-top: 5px double steelblue;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    padding: 1rem;
+    background-color: var(--color-principal);
+    opacity: 0.9;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    grid-area: "footer";
+    
+/*
+    background-image: url("../assets/zzlogo.png");
+    background-repeat: no-repeat;
+    background-size: 100px;
+    */   
+}
+
+
+/*
+RESPONSIVE DESIGN
+*/
+@media(max-widht: 750px){
+    .header__navbar {
+        display: none;
+    }
+}
+
+
+
+.shoppingcart{
+    position: absolute;
+    right: 1vw;
+    font-size: 5rem;
+    color: var(--color-principal);
+    bottom: 10vh;
+    background-color: var(--color-rosa);
+    padding: 2rem;
+    z-index: 1;
+    border-radius: 6rem;
+    transition: all 300ms ease-in-out;
+    line-height: 5rem;
+    
+}
+.shoppingcart:hover, .user__option:hover{
+    background-color: var(--color-bg-aesthetic);
+    cursor: pointer;
+    box-shadow: 0 8px 10px -1px black;
+    transform: translateY(-1rem);
+}
+
+.user__option{    
+    position: absolute;
+    right: 1vw;
+    font-size: 4rem;
+    color: var(--color-principal);
+    top: 1vh;
+    background-color: var(--color-rosa);
+    padding: 2rem;
+    z-index: 1;
+    border-radius: 6rem;
+    transition: all 300ms ease-in-out;
+    line-height: 5rem;
+}
+
+.user__option--active, .shoppingcart--active{
+    background-color: var(--color-bg-aesthetic);
+    border: 4px solid rgba(117, 24, 97, 0.75);
+    
+}
+.toggle_btn{
+    display: none;
+    cursor: pointer;
+}
+
+
+@media(max-width: 1149px){
+    .wrapper{
+        width: 100vw; /*que es un 80% de la pantalla*/
+        min-width: 100vw;
+        height: 100vh;
+        min-height: 100vh;
+
+        grid-template-rows: 0%
+        15vh
+        85vh; 
+    }
+    .navbar__lista{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .toggle_btn{
+        display: block;
+        flex-basis: 100%;       
+    }
+    .wrapper__main{
+        width: 100vw;        
+    }
+    .main__tarjetas{
+        margin: 1.5rem;
+    }
+    .tarjetas__tarjeta{
+        flex-basis: 100%;
+    }
+    .user__option{
+        top: 20vh;
+    }
+}
